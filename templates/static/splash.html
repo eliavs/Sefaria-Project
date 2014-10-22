@@ -111,22 +111,17 @@
 		
 	<div id="" class="span3 splashBox">
 		<h3>
-			<span class='en'>Featured Texts</span>
+			<span class='en'>Popular Texts</span>
 			<span class='he'>טקסטים מומלצים</span>
 		</h3>
 
-		{% if not request.user.is_authenticated %}
-			{{ "Genesis 1"|ref_link }}
-			{{ "Sukkah 19a"|ref_link }}
-	
-		{% else %}
-			{{ "Bava Metzia 59b:29"|ref_link }}
-			{{ "Messilat Yesharim 20:33"|ref_link }}
-	
-		{% endif %}
-
-			{{ "Mishneh Torah, Repentance 4:2"|ref_link }}
-			{{ "Malbim on Isaiah 61:10"|ref_link }}
+		{{ "Genesis"|ref_link }}
+		{{ "Pirkei Avot"|ref_link }}
+		{{ "Mishnah Berakhot"|ref_link }}
+		{{ "Bereishit Rabbah"|ref_link }}
+		{{ "Arbaah Turim"|ref_link }}
+		{{ "Sukkah"|ref_link }}
+		{{ "Messilat Yesharim"|ref_link }}
 
 	</div>
 
@@ -136,10 +131,14 @@
 			<span class='he'>דפי מקורות מומלצים</span>
 		</h3>
 
+		{{ 5331|sheet_link}}
+		{{ 5267|sheet_link}}
+		{{ 5205|sheet_link}}
 		{{ 4389|sheet_link}}
 		{{ 4390|sheet_link}}
 		{{ 4456|sheet_link}}
 		{{ 4519|sheet_link}}
+
 
 	</div>
 
