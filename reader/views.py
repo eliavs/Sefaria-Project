@@ -2017,3 +2017,23 @@ def explore(request, book1, book2, lang=None):
         template_vars["contentLang"] = "hebrew"
 
     return render_to_response('explore.html', template_vars, RequestContext(request))
+
+
+@catch_error_as_http
+def place_page(request, name):
+    place = Place().load({"key": name})
+    if not place:
+        raise Http404
+
+    template_vars = place.contents()
+    template_vars["primary_name"] = {
+        "en": place.primary_name("en"),
+        "he": place.primary_name("he")
+    }
+    template_vars["secondary_names"] = {
+        "en": place.secondary_names("en"),
+        "he": place.secondary_names("he")
+    }
+
+
+    return render_to_response('places.html', template_vars, RequestContext(request))
